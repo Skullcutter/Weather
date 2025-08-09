@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+## Introduction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Classy Weather is a **demo learning project** created to explore and practice key React concepts such as class components, state management, lifecycle methods, event handling, and conditional rendering.
 
-## Available Scripts
+The app allows users to enter a location, fetches its coordinates using a geocoding API, and then retrieves the daily weather forecast for that location. Weather details such as temperature and conditions are displayed with corresponding icons, making the interface both informative and visually engaging.
 
-In the project directory, you can run:
+This project serves as a practical exercise for understanding how to work with external APIs, manage asynchronous operations in React, and build clean, modular components.
 
-### `npm start`
+## How It Works
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. User enters a **location name**.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. The app calls the **Open-Meteo Geocoding API** to find coordinates and timezone.
 
-### `npm test`
+3. Using the returned coordinates, it fetches a **daily weather forecast**.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. The forecast is displayed as a list of days with icons, temperature ranges, and "Today" label for the current day.
 
-### `npm run build`
+## 🌟 Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Real-time Weather Data** — Fetches live weather forecasts for any searched location using the [Open-Meteo API](https://open-meteo.com/).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Geocoding Integration** — Automatically retrieves latitude, longitude, and timezone from the location input.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Daily Forecast View** — Displays a list of upcoming days with max/min temperatures.
 
-### `npm run eject`
+- **Weather Icons** — Uses emoji-style icons mapped to WMO weather codes for quick visual recognition.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Today Highlight** — Marks the current day's forecast clearly.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Local Storage Support** — Saves the last searched location for persistence across reloads (in `App.js` version).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🛠️ Tech Stack
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **React** (Class Components + Lifecycle Methods)
+- **CSS** for styling
+- **Open-Meteo API** for geocoding and weather data
+- **JavaScript (ES6+)** features including `fetch`, async/await, destructuring, and array methods.
 
-## Learn More
+## 📁 Project Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+/src
+  ├─ App.js        # Main app logic with search, API calls, and state handling
+  ├─ App-v1.js     # Earlier version with manual 'Get Weather' button
+  ├─ Counter.js    # Small counter component (date offset demo)
+  ├─ index.js      # Entry point rendering <App />
+  ├─ index.css     # Styling for the app
+  ├─ starter.js    # Base starter code (API fetch logic without UI)
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🚀 Installation & Run
 
-### Code Splitting
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/<your-username>/<repo-name>.git
+   cd <repo-name>
+   ```
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+3. **Run the app**:
+   ```bash
+   npm start
+   ```
+4. Open `http://localhost:3000` in your browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 👨‍💻 Learning
 
-### Analyzing the Bundle Size
+- Using **class components** and managing state with `this.setState()`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- React **lifecycle methods** (`componentDidMount`, `componentDidUpdate`, `componentWillUnmount`).
 
-### Making a Progressive Web App
+- **Fetching data from APIs** and handling async/await in React.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Passing props between components (`Weather` → `Day`).
 
-### Advanced Configuration
+- Mapping **API data** to UI elements and rendering lists with `key` props.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Basic **local storage integration** for persisting user input.
 
-### Deployment
+## 🤝 Contributions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Contributions are welcome!
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Fork the repository.
+2. Create a feature branch:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. Commit changes and push:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+4. Open a Pull Request describing your changes.
